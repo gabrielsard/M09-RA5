@@ -1,18 +1,20 @@
 public class Rot13 {
     //cabe recalcar que no tuve un primer commit en clase porque tuve un problema
     //con el github por haber hecho mal el clone, pero ahora mismo ya lo he solucionado y espero que no haya problemas
-    static char[] mayusculas = {
-        'A', 'À', 'B', 'C', 'D', 'E', 'É', 'F', 'G', 'H',
-        'I', 'Í', 'Ï', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O',
-        'Ó', 'P', 'Q', 'R', 'S', 'T', 'U', 'Ú', 'Ü', 'V',
-        'W', 'X', 'Y', 'Z'
-    };
     static char[] minusculas = {
-        'a', 'à', 'b', 'c', 'd', 'e', 'é', 'f', 'g', 'h',
-        'i', 'í', 'ï', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o',
-        'ó', 'p', 'q', 'r', 's', 't', 'u', 'ú', 'ü', 'v',
-        'w', 'x', 'y', 'z'
+        'a', 'á', 'à', 'b', 'c', 'ç', 'd', 'e', 'é', 'è',
+        'f', 'g', 'h', 'i', 'í', 'ì', 'ï', 'j', 'k', 'l',
+        'm', 'n', 'ñ', 'o', 'ó', 'ò', 'p', 'q', 'r', 's',
+        't', 'u', 'ú', 'ù', 'ü', 'v', 'w', 'x', 'y', 'z'
     };
+
+    static char[] mayusculas = {
+        'A', 'Á', 'À', 'B', 'C', 'Ç', 'D', 'E', 'É', 'È',
+        'F', 'G', 'H', 'I', 'Í', 'Ì', 'Ï', 'J', 'K', 'L',
+        'M', 'N', 'Ñ', 'O', 'Ó', 'Ò', 'P', 'Q', 'R', 'S',
+        'T', 'U', 'Ú', 'Ù', 'Ü', 'V', 'W', 'X', 'Y', 'Z'
+    };
+
 
     public static String xifraRot13(String cadena) {
 
