@@ -60,6 +60,14 @@ public class RotX {
 
     //desxifratRot hace lo mismo pero hacia atrás
 
+    public static String desxifraRotX(String cadena, int desplaçament) {
+        int longitud = minusculas.length; //lo mismo, length de los abecedarios
+        int desp = ((desplaçament % longitud) + longitud) % longitud;
+        //volvemos a depurar el desplazamiento 
+
+        
+    }
+
     //forcaBruta le das la cadena cifrada y va desifrando 1 por 1 
 
     
