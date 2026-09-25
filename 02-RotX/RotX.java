@@ -72,8 +72,47 @@ public class RotX {
         return xifraRotX(cadena, longitud - desp);
     }
 
+
     //forcaBruta le das la cadena cifrada y va desifrando 1 por 1 
+    public static void forcaBrutaRotX(String cadenaXifrada) {
+        System.out.println("Missatge xifrat: " + cadenaXifrada);
+        System.out.println("----------------");
 
-    
+        //aquí no sabemos con qué desplazamiento se cifró, así que probamos todos
+        //desde 0 hasta la longitud del abecedario (39) y mostramos cada resultado
+        for (int desplazamiento = 0; desplazamiento < minusculas.length; desplazamiento++) {
+            System.out.println("(" + desplazamiento + ")->" + desxifraRotX(cadenaXifrada, desplazamiento));
+        }
+    }
 
+
+        public static void main(String[] args) {
+
+        String[] mensajes = {
+            "ABC",
+            "XYZ",
+            "Hola, Mr. calçot",
+            "Perdó, per tu què és?"
+        };
+        int[] desplazamientos = {0, 2, 4, 6};
+
+        System.out.println("Xifrat");
+        System.out.println("------");
+        String[] mensajesCifrados = new String[mensajes.length];
+
+        for (int i = 0; i < mensajes.length; i++) {
+            mensajesCifrados[i] = xifraRotX(mensajes[i], desplazamientos[i]);
+            System.out.println("(" + desplazamientos[i] + ")-" + mensajes[i] + " => " + mensajesCifrados[i]);
+        }
+
+        System.out.println("\nDesxifrat");
+        System.out.println("---------");
+        for (int i = 0; i < mensajesCifrados.length; i++) {
+            System.out.println("(" + desplazamientos[i] + ")" + mensajesCifrados[i] + " => " + desxifraRotX(mensajesCifrados[i], desplazamientos[i]));
+        }
+
+        System.out.println();
+        //probamos la fuerza bruta con el último mensaje cifrado (el de desplazamiento 6)
+        forcaBrutaRotX(mensajesCifrados[3]);
+    }    
 }
