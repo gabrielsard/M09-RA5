@@ -16,8 +16,52 @@ public class RotX {
 
     //xifratRot hace que se xifren dependiendo de la cadena y la cantidad de saltos
 
+    public static String xifraRotX(String cadena, int desplazamiento) {
+        int longitud = minusculas.length; //variable con el length del código ez peacy 
+        int desp = ((desplazamiento % longitud) + longitud) % longitud; 
+        //tengo que limpiar el desplazamiento para que quede dentro de 0 y el length del abcedario 
+
+        String resultado = "";
+
+        //recorremos la cadena que nos dieron 
+        for (int i = 0; i < cadena.length(); i++) {
+            char letra = cadena.charAt(i);
+            boolean encontrada = false;
+
+            //ahora recorremos todo el char de las minúsculas a ver si se encuentra ahí
+            for (int j = 0; j < minusculas.length; j++) {
+                //si se encuentra pues cambiamos el boolean y metemos el carácter cifrado en resultado
+                if (letra == minusculas[j]) {
+                    resultado += minusculas[(j + desp) % longitud];
+                    encontrada = true;
+                    break;
+                }
+            }
+
+            //si no es minuscula pues tiramos por las mayus
+            if (!encontrada) {
+                for (int j = 0; j < mayusculas.length; j++) {
+                    if (letra == mayusculas[j]) {
+                        resultado += mayusculas[(j + desp) % longitud];
+                        encontrada = true;
+                        break;
+                    }
+                }
+            }
+
+            //y si no es letra directamente lo ponemos en resultado porque lo más probable es que sea un caracter :p
+            if (!encontrada) {
+                resultado += letra;
+            }
+        }
+        //no creo que haga falta explicar para que funciona esto xd
+        return resultado;
+    }
+
     //desxifratRot hace lo mismo pero hacia atrás
 
     //forcaBruta le das la cadena cifrada y va desifrando 1 por 1 
+
+    
 
 }
