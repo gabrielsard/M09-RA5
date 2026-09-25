@@ -65,7 +65,11 @@ public class RotX {
         int desp = ((desplaçament % longitud) + longitud) % longitud;
         //volvemos a depurar el desplazamiento 
 
-        
+        // En vez de duplicar todo el bucle, reutilizamos lo que hicimos antes :p
+        // Ok, soooo, en esta parte en vez de restar vamos a darle el número positivo para que de la vuelta
+        // Por si el profesor lee esto, hago que de toda la vuelta porque anteriormente dije que no se podían pasar 
+        // negativos, por lo cual esta es la forma que se me ocurrió, no sé si es eficiente, pero salió de mi cabeza
+        return xifraRotX(cadena, longitud - desp);
     }
 
     //forcaBruta le das la cadena cifrada y va desifrando 1 por 1 
