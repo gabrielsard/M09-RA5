@@ -106,4 +106,38 @@ public class Monoalfabetic {
         }
         return resultado;
     }
+
+
+
+
+    public static void main(String[] args) {
+
+        Monoalfabetic mono = new Monoalfabetic();
+
+        mono.permutacion = mono.permutaAlfabet(mono.mayusculas);
+
+        System.out.println("Alfabet original: " + new String(mono.mayusculas));
+        System.out.println("Permutació:       " + new String(mono.permutacion));
+        System.out.println();
+
+        String[] tests = {
+            "Test 01 àrbritre, coixí, Perímetre",
+            "Test 02 Taüll, DÍA, año",
+            "Test 03 Peça, Òrrius, Bòvila"
+        };
+
+        System.out.println("Xifratge:");
+        String[] testsXifrats = new String[tests.length];
+
+        for (int i = 0; i < tests.length; i++) {
+            testsXifrats[i] = mono.xifraMonoAlfa(tests[i]);
+            System.out.println(tests[i] + " -> " + testsXifrats[i]);
+        }
+
+        System.out.println("\nDesxifratge:");
+        for (int i = 0; i < testsXifrats.length; i++) {
+            System.out.println(testsXifrats[i] + " -> " + mono.desxifraMonoAlfa(testsXifrats[i]));
+        }
+    }
+
 }
