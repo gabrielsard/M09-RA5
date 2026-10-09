@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Polialfabetic {
+public class polialfabetic {
 
     private static long clauSecreta = 192939495969798L;
     private static Random random;
